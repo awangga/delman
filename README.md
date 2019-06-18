@@ -9,7 +9,7 @@ numba -s
 
 ### Tensorflow keras gpu
 conda install -c anaconda mkl=2017.0
-conda install -c anaconda keras-gpu=2.2
+conda install -c anaconda keras-gpu
 
 
 import tensorflow as tf
