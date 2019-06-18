@@ -3,9 +3,14 @@ Python with Cuda Support
 
 ## Installation Cuda
 conda install -c anaconda accelerate
-conda install -c anaconda cudatoolkit=10.0
 conda install -c anaconda numba=0.43
 numba -s
 
 
+### Tensorflow keras gpu
+conda install -c anaconda mkl=2017.0
+conda install -c anaconda keras-gpu=2.2
 
+
+import tensorflow as tf
+sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
