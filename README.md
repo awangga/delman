@@ -15,3 +15,10 @@ test if GPU was connected to the tensorflow
 import tensorflow as tf
 sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
 ```
+
+### Check GPU Support in Matlab
+Runin the Command Window of Matlab 
+```m
+gpuDeviceCount
+gpuDevice(1)
+```
