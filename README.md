@@ -17,8 +17,16 @@ sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
 ```
 
 ### Check GPU Support in Matlab
-Runin the Command Window of Matlab 
+To show Existing GPU, in the Command Window of Matlab 
 ```m
 gpuDeviceCount
 gpuDevice(1)
+```
+
+To use GPUArray
+
+```matlab
+g = gpuDevice(1);
+M = gpuArray(magic(4));
+M_exists = existsOnGPU(M)
 ```
