@@ -1,8 +1,8 @@
 # delman
 Python with Cuda Support
 
-## Windows
-Compile tensorflow 2.x in old CPU without AVX support
+## Tensorflow 2.0 Windows
+Compile tensorflow 2.0 in old CPU without AVX support
 Requirements:
 1. tensorflow_gpu-2.0.0	
 2. python 3.7
@@ -23,6 +23,7 @@ python configure.py
 SSE4
 
 bazel build --config=opt --config=cuda --define=no_tensorflow_py_deps=true --copt=-nvcc_options=disable-warnings //tensorflow/tools/pip_package:build_pip_package
+bazel-bin\tensorflow\tools\pip_package\build_pip_package C:/Users/LENOVO/Downloads/tmp/tensorflow_pkg
 ```
 
 
