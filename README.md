@@ -10,7 +10,7 @@ Requirements:
 4. Bazel 0.26.1	
 5. cuDNN 7.4.2.24 (on ubuntu not tested in windows use v7.6.5)
 6. CUDA 10.0.130 and replace C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0\bin\cudafe++.exe from CUDA 10.1 update 1(check only to install nvcc)
-7. Make sure avoid default set extension /arch:AVX. Please set to unknown option like /arch:SSE2
+7. Make sure avoid default set extension /arch:AVX. Please set to unknown option like /arch:SSE4
 
 ```sh
 git clone https://github.com/tensorflow/tensorflow.git
@@ -19,7 +19,7 @@ git checkout r2.0
 cmd admin:
 python configure.py
 
-/arch:SSE2
+/arch:SSE4
 
 bazel build --config=opt --config=cuda --define=no_tensorflow_py_deps=true --copt=-nvcc_options=disable-warnings //tensorflow/tools/pip_package:build_pip_package
 bazel-bin\tensorflow\tools\pip_package\build_pip_package C:/Users/LENOVO/Downloads/tmp/tensorflow_pkg
