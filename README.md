@@ -10,6 +10,7 @@ Requirements:
 4. Bazel 0.26.1	
 5. cuDNN 7.4.2.24
 6. CUDA 10.0.130 and replace C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0\bin\cudafe++.exe from CUDA 10.1 update 1(check only to install nvcc)
+7. Make sure avoid default set extension /arch:AVX set to unknown option like SSE4 or /arch:SSE4
 
 ```sh
 git clone https://github.com/tensorflow/tensorflow.git
