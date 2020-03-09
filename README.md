@@ -2,15 +2,16 @@
 Python with Cuda Support
 
 ## Tensorflow 2.1.0 Windows (Untested)
-Compile tensorflow 2.0 in old CPU without AVX support
+Compile tensorflow 2.1 in old CPU without AVX support
 Requirements:
 1. tensorflow 2.1.0	
 2. python 3.7
 3. MSVC 2017
 4. Bazel 0.27.1	
-5. cuDNN 7.6.5
-6. CUDA 10.1 update 1
-7. Make sure avoid default set extension /arch:AVX. Please set to unknown option like /arch:SSE4
+5. cuDNN 7.4.2.24
+6. CUDA 10.0.130 and replace C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v10.0\bin\cudafe++.exe from CUDA 10.1 update 1(check only to install nvcc)
+7. Edit .bazelrc file on line 131 and 132 change -std=c++14 to /std:c++14
+8. Run: python configure.py; Make sure set XLA JIT support = no and Please set to unknown option like /arch:SSE42
 
 ```sh
 git clone https://github.com/tensorflow/tensorflow.git
@@ -18,9 +19,6 @@ cd tensorflow
 git checkout r2.1
 cmd admin:
 python configure.py
-
-XLA JIT support : no
-/arch:SSE4
 
 bazel build --config=opt --config=cuda --define=no_tensorflow_py_deps=true --copt=-nvcc_options=disable-warnings //tensorflow/tools/pip_package:build_pip_package
 
