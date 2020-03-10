@@ -1,7 +1,7 @@
 # delman
 Python with Cuda Support
 
-## Tensorflow 2.1.0 Windows (Untested)
+## Tensorflow 2.1.0 Windows
 Compile tensorflow 2.1 in old CPU without AVX support
 Requirements:
 1. tensorflow 2.1.0	
